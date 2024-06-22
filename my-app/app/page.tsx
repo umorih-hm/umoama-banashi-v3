@@ -1,14 +1,33 @@
-import { Button } from "@/components/ui/button";
+import {Button} from "@nextui-org/react";
 import useTranslation from 'next-translate/useTranslation';
 
 export default function Home() {
   const { t } = useTranslation('common');
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
-        <Button>{t('app.button.title')}</Button>
+    <div className="container mx-auto">
+      <main className="flex bg-background min-h-screen flex-col items-center justify-center p-8 lg:w-5/6 mx-auto">
+
+        {/* video */}
+        <video src="/logo_mic.mp4" muted loop autoPlay width="200"></video>
+
+        {/* topic */}
+        <h1 className="text-md md:text-xl font-bold mb-6">{t('app.top.topic')}</h1>
+
+        {/* umoama contents */}
+        <h1 className="text-md md:text-xl font-bold mb-6">{t('app.top.umoama_contents')}</h1>
+
+        {/* member */}
+        <h1 className="text-md md:text-xl font-bold mb-6">{t('app.top.member.title')}</h1>
+        <div className="flex gap-4 justify-center">
+          <Button color="success" variant="bordered">
+            {t('app.top.member.umorih')}
+          </Button>
+          <Button color="danger" variant="bordered">
+            {t('app.top.member.amaneriy')}
+          </Button>
       </div>
-    </main>
+      </main>
+    </div>
   );
 }
