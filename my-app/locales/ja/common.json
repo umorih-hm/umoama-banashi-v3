@@ -1,7 +1,28 @@
 {
   "app": {
-    "button": {
-      "title": "クリック"
+    "layout": {
+      "news": "NEWS",
+      "learn": "LEARN",
+      "gourmet": "GOURMET",
+      "walk": "WALK",
+      "about": "ABOUT",
+      "contact": "CONTACT",
+      "blog": "BLOG"
+    },
+    "top": {
+      "topic": "Topic",
+      "umoama_contents": "UMOAMA CONTENTS",
+      "member":{
+        "title": "MEMBER",
+        "umorih": "UMORiH",
+        "amaneriy": "AMANERiY"
+      }
+    },
+    "blog": {
+      "list": {
+        "title": "ブログ一覧"
+      }
     }
-  }
+  },
+  "test": "テスt"
 }
