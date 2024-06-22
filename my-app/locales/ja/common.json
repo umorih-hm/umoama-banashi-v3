@@ -7,7 +7,10 @@
       "walk": "WALK",
       "about": "ABOUT",
       "contact": "CONTACT",
-      "blog": "BLOG"
+      "blog": "BLOG",
+      "footer": {
+        "copyright": "©️2024 UMOAMA banashi."
+      }
     },
     "top": {
       "topic": "Topic",

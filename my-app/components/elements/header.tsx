@@ -1,5 +1,10 @@
 import Link from "next/link"
-import Image from "next/image"
+import {
+  Navbar,
+  NavbarContent,
+  NavbarItem,
+  Image
+} from '@nextui-org/react';
 import useTranslation from 'next-translate/useTranslation';
 
 export const Header = () => {
@@ -39,19 +44,25 @@ export const Header = () => {
 
 
   return (
-    <header className="flex flex-col items-center justify-between p-4 border-b">
-      <div className="flex items-center gap-2 mb-2 text-lg font-semibold">
-        <Link href="/" className="flex items-center gap-2" prefetch={false}>
-          <Image width={200} height="200" alt="NextUI hero Image" src="/logo.svg" />
-        </Link>
-      </div>
-      <nav className="hidden md:flex items-center gap-6">
-        {header.map((item) => {
-          return (
-              <Link href={item.to} className="text-slate-500">{item.title}</Link>
-          );
-        })}
-      </nav>
-    </header>
+    <div>
+      <Navbar className="bg-background">
+        <NavbarContent className="mx-auto py-4">
+          <Link href="/">
+            <Image width={200} alt="NextUI hero Image" src="/logo.svg" />
+          </Link>
+        </NavbarContent>
+      </Navbar>
+      <Navbar isBordered className="bg-background">
+        <NavbarContent className="gap-4 mx-auto mb-2">
+          {header.map((item) => {
+            return (
+              <NavbarItem>
+                <Link href={item.to}>{item.title}</Link>
+              </NavbarItem>
+            );
+          })}
+        </NavbarContent>
+      </Navbar>
+    </div>
   )
 }

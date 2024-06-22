@@ -1,12 +1,12 @@
-import {Button} from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import useTranslation from 'next-translate/useTranslation';
 
 export default function Home() {
   const { t } = useTranslation('common');
 
   return (
-    <div className="container mx-auto">
-      <main className="flex bg-background min-h-screen flex-col items-center justify-center p-8 lg:w-5/6 mx-auto">
+    <div className="container mx-auto min-h-screen">
+      <main className="flex bg-background flex-col items-center justify-center p-8 lg:w-5/6 mx-auto">
 
         {/* video */}
         <video src="/logo_mic.mp4" muted loop autoPlay width="200"></video>

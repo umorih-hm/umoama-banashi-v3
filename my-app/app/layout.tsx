@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Providers } from './uiProvider';
 import { Zen_Kaku_Gothic_New } from 'next/font/google';
 import "./globals.css";
+
 import { Header } from '../components/elements/header'
+import { Footer } from '../components/elements/footer'
 
 const ZenKakuGothicNew = Zen_Kaku_Gothic_New({
   display: 'swap',
@@ -23,8 +25,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={ZenKakuGothicNew.className}>
-      <Header></Header>
-      <Providers>{children}</Providers>
+      <Providers><Header></Header></Providers>
+      {children}
+      <Providers><Footer></Footer></Providers>
       </body>
     </html>
   );

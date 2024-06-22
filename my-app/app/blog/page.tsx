@@ -10,7 +10,7 @@ export default async function Home() {
   const { t } = useTranslation('common');
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto min-h-screen">
       <main className="flex bg-background flex-col justify-center p-8 lg:w-5/6 mx-auto">
         <h1 className='font-bold'>{t('app.blog.list.title')}</h1>
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
