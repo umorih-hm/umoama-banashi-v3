@@ -54,9 +54,9 @@ export const Header = () => {
       </Navbar>
       <Navbar isBordered className="bg-background">
         <NavbarContent className="gap-4 mx-auto mb-2">
-          {header.map((item) => {
+          {header.map((item, index) => {
             return (
-              <NavbarItem>
+              <NavbarItem key={index}>
                 <Link href={item.to}>{item.title}</Link>
               </NavbarItem>
             );

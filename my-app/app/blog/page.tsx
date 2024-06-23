@@ -16,7 +16,7 @@ export default async function Home() {
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 p-4">
             {postsProperties.map((post: NotionPost, index: number) => (
-              <PostCard post={post} index={index} />
+              <PostCard post={post} index={index} key={index}/>
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
