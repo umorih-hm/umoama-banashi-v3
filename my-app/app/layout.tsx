@@ -25,9 +25,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={ZenKakuGothicNew.className}>
-      <Providers><Header></Header></Providers>
-      {children}
-      <Providers><Footer></Footer></Providers>
+        <Providers><Header></Header></Providers>
+        <Providers>{children}</Providers>
+        <Footer></Footer>
       </body>
     </html>
   );
