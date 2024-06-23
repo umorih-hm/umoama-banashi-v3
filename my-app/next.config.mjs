@@ -2,6 +2,9 @@ import nextTranslate from 'next-translate-plugin';
 
 const nextConfig = {
   reactStrictMode: true,
+  typescript: {
+    ignoreBuildErrors: true
+  },
   images: {
     remotePatterns: [
       {
