@@ -1,10 +1,5 @@
-import Link from "next/link"
-import {
-  Navbar,
-  NavbarContent,
-  NavbarItem,
-  Image
-} from '@nextui-org/react';
+import Link from 'next/link';
+import { Navbar, NavbarContent, NavbarItem, Image } from '@nextui-org/react';
 import useTranslation from 'next-translate/useTranslation';
 
 export const Header = () => {
@@ -42,17 +37,18 @@ export const Header = () => {
     },
   ];
 
-
   return (
     <div>
-      <Navbar className="bg-background">
-        <NavbarContent className="mx-auto py-4">
+      <Navbar
+        isBordered
+        shouldHideOnScroll
+        className="bg-background flex flex-col py-2"
+      >
+        <NavbarContent className="mx-auto">
           <Link href="/">
             <Image width={200} alt="NextUI hero Image" src="/logo.svg" />
           </Link>
         </NavbarContent>
-      </Navbar>
-      <Navbar isBordered className="bg-background">
         <NavbarContent className="gap-4 mx-auto mb-2">
           {header.map((item, index) => {
             return (
@@ -64,5 +60,5 @@ export const Header = () => {
         </NavbarContent>
       </Navbar>
     </div>
-  )
-}
+  );
+};
