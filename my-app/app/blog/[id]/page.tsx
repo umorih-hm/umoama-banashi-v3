@@ -8,8 +8,7 @@ import NextImage from 'next/image';
 import { Image, User } from '@nextui-org/react';
 
 export default async function Page({ params }: { params: { id: string } }) {
-  const pageContents: any = await getPageContent(params.id);
-  const htmlContent = pageContents.props.content;
+  const htmlContent: any = await getPageContent(params.id);
   const post = await getPageInfo(params.id);
 
   return (
