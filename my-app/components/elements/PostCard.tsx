@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import NextImage from 'next/image';
-import { Image, User } from '@nextui-org/react';
+import { User } from '@nextui-org/react';
 
 export const PostCard = ({ post, index }: PostCardRequest) => {
   return (

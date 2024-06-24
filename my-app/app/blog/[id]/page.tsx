@@ -1,9 +1,9 @@
-
 import 'zenn-content-css';
-import Script from 'next/script'
+import Script from 'next/script';
 
 import { getPageInfo } from '../../../lib/notion/getPage';
 import { getPageContent } from '../../../lib/notion/getPageContent';
+import NextImage from 'next/image';
 import { Image, User } from '@nextui-org/react';
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -13,16 +13,22 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <Script src="https://embed.zenn.studio/js/listen-embed-event.js" strategy="afterInteractive"/>
-      <div className="container-xl flex bg-background min-h-screen flex-col items-center justify-center p-16 lg:w-5/6 mx-auto">
-        {/* サムネ画像 */}
-        <Image
-          radius="lg"
-          alt={post.title}
-          src={post.image ? post.image : 'https://placehold.jp/200x150.png'}
-        />
+      <Script
+        src="https://embed.zenn.studio/js/listen-embed-event.js"
+        strategy="afterInteractive"
+      />
+      <div className="container-xl flex bg-background min-h-screen flex-col items-center justify-center p-8 lg:w-5/6 mx-auto">
+        <div className="h-[300px] relative w-full mb-4">
+          {/* サムネ画像 */}
+          <NextImage
+            fill
+            alt={post.title}
+            className="rounded-lg object-contain"
+            src={post.image ? post.image : 'https://placehold.jp/200x150.png'}
+          />
+        </div>
         {/* タイトル */}
-        <h1 className="text-2xl">{post.title}</h1>
+        <h1 className="text-2xl mb-4">{post.title}</h1>
         {/* パーソン ・日付*/}
         <div className="items-start">
           <User
