@@ -8,7 +8,7 @@ export const PostCard = ({ post, index }: PostCardRequest) => {
       {/* サムネ画像 */}
       <NextImage
         width="200"
-        height="150"
+        height="100"
         alt={post.title}
         className="object-cover h-2/5 rounded-lg hover:opacity-50"
         src={post.image ? post.image : 'https://placehold.jp/200x150.png'}
