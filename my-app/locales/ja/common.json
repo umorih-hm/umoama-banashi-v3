@@ -29,5 +29,9 @@
       }
     }
   },
-  "test": "テスt"
+  "component": {
+    "post_card": {
+      "sub_title": "【サブタイトル】"
+    }
+  }
 }
