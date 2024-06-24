@@ -23,7 +23,9 @@
     },
     "blog": {
       "list": {
-        "title": "ブログ一覧"
+        "current": "最新の投稿",
+        "umorih": "UMORiH",
+        "amaneriy": "AMANERiY"
       }
     }
   },

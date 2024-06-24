@@ -1,6 +1,6 @@
 import { notion } from './notion';
 
-export async function getAllPages(): Promise<NotionPost[]> {
+export async function getAllPages(person?: string): Promise<NotionPost[]> {
   const dataBaseId:string = process.env.DATABASE_ID ? process.env.DATABASE_ID : ''
   const response = await notion.databases.query({
     database_id: dataBaseId,
@@ -18,6 +18,12 @@ export async function getAllPages(): Promise<NotionPost[]> {
             equals: 'PUBLISH',
           },
         },
+        {
+          property: 'Person',
+          select: {
+            equals: person ?? '',
+          },
+        }
       ],
     },
   });
