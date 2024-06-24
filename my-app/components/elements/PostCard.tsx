@@ -1,27 +1,22 @@
 import Link from 'next/link';
+import NextImage from 'next/image';
 import { Image, User } from '@nextui-org/react';
 
 export const PostCard = ({ post, index }: PostCardRequest) => {
   return (
     <Link href={`/blog/${post.id}`} key={index}>
       {/* サムネ画像 */}
-      <Image
-        radius="md"
+      <NextImage
         width="200"
         height="150"
         alt={post.title}
-        isZoomed
-        className="object-fit"
+        className="object-cover h-2/5 rounded-lg hover:opacity-50"
         src={post.image ? post.image : 'https://placehold.jp/200x150.png'}
       />
       {/* タイトル */}
-      <h2 className="text-sm sm:text-md md:text-lg font-bold mb-2">
-        {post.title}
-      </h2>
+      <h2 className="font-bold my-2">{post.title}</h2>
       {/* サブブタイトル */}
-      <h3 className="text-sm sm:text-md md:text-lg mb-2">
-        {post.subTitle}
-      </h3>
+      <h6 className="mb-2">{post.subTitle}</h6>
       {/* パーソン ・日付*/}
       <User
         name={post.person}
