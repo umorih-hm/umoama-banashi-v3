@@ -1,4 +1,5 @@
 import 'zenn-content-css';
+import { Toc } from '../../../components/elements/toc';
 import Script from 'next/script';
 
 import { getPageInfo } from '../../../lib/notion/getPage';
@@ -46,11 +47,12 @@ export default async function Page({ params }: { params: { id: string } }) {
           />
         </div>
         <div
-          className="znc mx-auto"
+          className="znc mx-auto content"
           dangerouslySetInnerHTML={{
             __html: htmlContent,
           }}
         />
+        <Toc></Toc>
       </div>
     </>
   );

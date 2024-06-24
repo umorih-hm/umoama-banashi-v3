@@ -45,18 +45,18 @@ export async function getPageContent(pageId: string) {
   const domHtml = new JSDOM(content).window.document;
 
   // DOMから目次を検索し、{hタグレベル、タイトル名、リンク先}、を取得する
-  // const elements = domHtml.querySelectorAll<HTMLElement>('h1, h2, h3');
-  // let tableOfContent = [];
-  // elements.forEach((element) => {
-  //   const level = element.tagName;
-  //   const title = element.innerHTML.split('</a> ')[1];
-  //   const href = '#' + element.id;
-  //   const record = { level: level, title: title, href: href, id: element.id };
-  //   tableOfContent.push(record);
-  // });
+  const elements = domHtml.querySelectorAll<HTMLElement>('h1, h2, h3');
+  let tableOfContent = <any>[];
+  elements.forEach((element: any) => {
+    const level = element.tagName;
+    const title = element.innerHTML.split('</a> ')[1];
+    const href = '#' + element.id;
+    const record = { level: level, title: title, href: href, id: element.id };
+    tableOfContent.push(record);
+  });
+  console.log(tableOfContent);
 
   return {
-    // props: { content: content, tableOfContent: tableOfContent },
-    props: { content: content },
+    props: { content: content, tableOfContent: tableOfContent },
   };
 }
