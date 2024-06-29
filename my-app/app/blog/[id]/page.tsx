@@ -1,15 +1,36 @@
+import useTranslation from 'next-translate/useTranslation';
 import 'zenn-content-css';
 import { Toc } from '../../../components/elements/toc';
 import Script from 'next/script';
 
 import { getPageInfo } from '../../../lib/notion/getPage';
 import { getPageContent } from '../../../lib/notion/getPageContent';
+import { Breadcrumb } from '../../../components/elements/Breadcrumbs';
 import NextImage from 'next/image';
 import { Image, User } from '@nextui-org/react';
 
 export default async function Page({ params }: { params: { id: string } }) {
   const htmlContent: any = await getPageContent(params.id);
   const post = await getPageInfo(params.id);
+  const { t } = useTranslation('common');
+  const links: Breadcrumb[] = [
+    {
+      title: t('app.layout.home'),
+      href: '/',
+    },
+    {
+      title: t('app.layout.blog'),
+      href: '/blog',
+    },
+    {
+      title: post.person,
+      href: '#',
+    },
+    {
+      title: post.title,
+      href: `/blog/${post.id}`,
+    },
+  ]
 
   return (
     <>
@@ -17,6 +38,9 @@ export default async function Page({ params }: { params: { id: string } }) {
         src="https://embed.zenn.studio/js/listen-embed-event.js"
         strategy="afterInteractive"
       />
+      <div className="pt-8 pb-2 lg:w-4/6 mx-auto">
+        <Breadcrumb links={links} />
+      </div>
       <div className="container-xl flex bg-background min-h-screen flex-col items-center justify-center p-8 lg:w-5/6 mx-auto">
         <div className="h-[300px] relative w-full mb-4">
           {/* サムネ画像 */}
@@ -30,7 +54,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         {/* タイトル */}
         <h1 className="text-2xl mb-4">{post.title}</h1>
         {/* パーソン ・日付*/}
-        <div className="items-start">
+        <div>
           <User
             name={post.person}
             avatarProps={

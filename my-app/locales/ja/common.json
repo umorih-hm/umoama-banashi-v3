@@ -1,6 +1,7 @@
 {
   "app": {
     "layout": {
+      "home": "HOME",
       "news": "NEWS",
       "learn": "LEARN",
       "gourmet": "GOURMET",
