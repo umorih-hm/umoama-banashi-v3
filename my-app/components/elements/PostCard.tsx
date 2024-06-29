@@ -29,7 +29,9 @@ export const PostCard = ({ post, index }: PostCardRequest) => {
           src={post.image ? post.image : 'https://placehold.jp/200x150.png'}
         />
         {/* タイトル */}
-        <h2 className="font-bold my-2">{post.title}</h2>
+        <div className='max-w-[200px] text-wrap'>
+          <h3 className="font-bold my-2">{post.title}</h3>
+        </div>
         {/* パーソン ・日付*/}
         <User
           name={post.person}
