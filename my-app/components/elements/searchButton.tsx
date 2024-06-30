@@ -20,8 +20,8 @@ export const SearchButton = () => {
       <Input
         label={t('component.search_button.label')}
         isClearable
-        radius='md'
-        variant='faded'
+        radius='lg'
+        variant="bordered"
         className="max-w-[300px]"
         value={keyword}
         onChange={(e) => setQuery(e.target.value)}
