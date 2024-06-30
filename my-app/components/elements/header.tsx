@@ -26,7 +26,7 @@ export const Header = () => {
     },
     {
       title: t('app.layout.works'),
-      to: '/',
+      to: '/works',
     },
     {
       title: t('app.layout.about'),

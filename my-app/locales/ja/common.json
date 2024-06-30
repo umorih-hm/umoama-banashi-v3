@@ -28,6 +28,13 @@
         "amaneriy": "AMANERiY"
       }
     },
+    "works": {
+      "list": {
+        "current": "最新の投稿",
+        "umorih": "UMORiH",
+        "amaneriy": "AMANERiY"
+      }
+    },
     "search": {
       "result": "の検索結果"
     }
