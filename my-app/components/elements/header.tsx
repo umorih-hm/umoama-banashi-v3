@@ -17,15 +17,11 @@ export const Header = () => {
       to: '/',
     },
     {
-      title: t('app.layout.learn'),
-      to: '/',
+      title: t('app.layout.note'),
+      to: '/note',
     },
     {
-      title: t('app.layout.gourmet'),
-      to: '/',
-    },
-    {
-      title: t('app.layout.walk'),
+      title: t('app.layout.map'),
       to: '/',
     },
     {
@@ -35,10 +31,6 @@ export const Header = () => {
     {
       title: t('app.layout.contact'),
       to: '/',
-    },
-    {
-      title: t('app.layout.blog'),
-      to: '/blog',
     },
   ];
 

@@ -16,12 +16,12 @@ export default async function Search({ searchParams }: { searchParams: { keyword
       href: '/',
     },
     {
-      title: t('app.layout.blog'),
-      href: '/blog',
+      title: t('app.layout.note'),
+      href: '/note',
     },
     {
       title: `${searchParams.keyword}${t('app.search.result')}`,
-      href: `/blog/search?keyword=${searchParams.keyword}`,
+      href: `/note/search?keyword=${searchParams.keyword}`,
     },
   ]
 

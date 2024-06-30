@@ -19,7 +19,7 @@ export const PostCard = ({ post, index }: PostCardRequest) => {
       color="success"
     >
       {/* サブブタイトル */}
-      <Link href={`/blog/${post.id}`} key={index}>
+      <Link href={`/note/${post.id}`} key={index}>
         {/* サムネ画像 */}
         <NextImage
           width="200"

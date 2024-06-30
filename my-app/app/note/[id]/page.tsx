@@ -19,8 +19,8 @@ export default async function Page({ params }: { params: { id: string } }) {
       href: '/',
     },
     {
-      title: t('app.layout.blog'),
-      href: '/blog',
+      title: t('app.layout.note'),
+      href: '/note',
     },
     {
       title: post.person,
@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     },
     {
       title: post.title,
-      href: `/blog/${post.id}`,
+      href: `/note/${post.id}`,
     },
   ]
 

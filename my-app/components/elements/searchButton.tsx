@@ -12,7 +12,7 @@ export const SearchButton = () => {
 
   const submit = (event: any) => {
     if (event.key === 'Enter' && !!keyword.length) {
-      router.replace(`/blog/search?keyword=${keyword}`)
+      router.replace(`/note/search?keyword=${keyword}`)
     }
   }
 

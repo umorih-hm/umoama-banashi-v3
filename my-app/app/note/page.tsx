@@ -18,8 +18,8 @@ export default async function Home() {
       href: '/',
     },
     {
-      title: t('app.layout.blog'),
-      href: '/blog',
+      title: t('app.layout.note'),
+      href: '/note',
     },
   ]
 
@@ -33,7 +33,7 @@ export default async function Home() {
             <SearchButton/>
           </div>
         {/* 最新の投稿 */}
-        <h1 className="font-bold">{t('app.blog.list.current')}</h1>
+        <h1 className="font-bold">{t('app.note.list.current')}</h1>
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
             {currentPosts.map((post: NotionPost, index: number) => (
@@ -44,7 +44,7 @@ export default async function Home() {
         </ScrollArea>
 
         {/* UMORiHの投稿 */}
-        <h1 className="font-bold">{t('app.blog.list.umorih')}</h1>
+        <h1 className="font-bold">{t('app.note.list.umorih')}</h1>
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
             {umorihPosts.map((post: NotionPost, index: number) => (
@@ -55,7 +55,7 @@ export default async function Home() {
         </ScrollArea>
 
         {/* AMANERiYの投稿 */}
-        <h1 className="font-bold">{t('app.blog.list.amaneriy')}</h1>
+        <h1 className="font-bold">{t('app.note.list.amaneriy')}</h1>
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
             {amaneriyPosts.map((post: NotionPost, index: number) => (

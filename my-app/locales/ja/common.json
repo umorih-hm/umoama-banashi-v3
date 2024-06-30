@@ -3,12 +3,10 @@
     "layout": {
       "home": "HOME",
       "news": "NEWS",
-      "learn": "LEARN",
-      "gourmet": "GOURMET",
-      "walk": "WALK",
+      "note": "NOTE",
+      "map": "MAP",
       "about": "ABOUT",
       "contact": "CONTACT",
-      "blog": "BLOG",
       "footer": {
         "copyright": "©️2024 UMOAMA banashi."
       }
@@ -22,7 +20,7 @@
         "amaneriy": "AMANERiY"
       }
     },
-    "blog": {
+    "note": {
       "list": {
         "current": "最新の投稿",
         "umorih": "UMORiH",
