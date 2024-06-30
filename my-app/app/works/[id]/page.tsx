@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: { id: string } }) {
         src="https://embed.zenn.studio/js/listen-embed-event.js"
         strategy="afterInteractive"
       />
-      <div className="pt-8 pb-2 lg:w-4/6 mx-auto">
+      <div className="pt-8 pb-2 px-8 lg:w-5/6 mx-auto">
         <Breadcrumb links={links} />
       </div>
       <div className="container-xl flex bg-background min-h-screen flex-col items-center justify-center p-8 lg:w-5/6 mx-auto">
@@ -70,7 +70,7 @@ export default async function Page({ params }: { params: { id: string } }) {
           />
         </div>
         <div
-          className="znc mx-auto content"
+          className="znc mx-auto content w-full"
           dangerouslySetInnerHTML={{
             __html: htmlContent,
           }}
