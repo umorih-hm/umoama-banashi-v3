@@ -14,7 +14,7 @@ export const Content = ({ imageSrc, title, navigation }: ContentRequest) => {
 
   return (
     <div>
-      <div className='flex justify-between gap-8'>
+      <div className='flex gap-12'>
         <div>
           <NextImage
               width="405"
@@ -33,7 +33,7 @@ export const Content = ({ imageSrc, title, navigation }: ContentRequest) => {
         </div>
         <div>
           <h1 className='font-bold pb-4'>{title}</h1>
-          <p className='text-wrap'>{navigation}</p>
+          <p className="whitespace-pre-wrap">{navigation}</p>
         </div>
     </div>
   </div>

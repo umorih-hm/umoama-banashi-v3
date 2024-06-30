@@ -24,17 +24,17 @@ export default function Home() {
         </h1>
 
         {/* UMOAMA NOTE */}
-        <div className='py-4'>
+        <div className='py-4 w-full'>
           <Content imageSrc="/note.png" title={t('app.top.umoama_contents.note.title')} navigation={t('app.top.umoama_contents.note.navigation')} />
         </div>
 
         {/* UMOAMA MAP */}
-        <div className='py-4'>
+        <div className='py-4 w-full'>
           <Content imageSrc="/map.png" title={t('app.top.umoama_contents.map.title')} navigation={t('app.top.umoama_contents.map.navigation')} />
         </div>
 
         {/* UMOAMA WORKS */}
-        <div className='py-4'>
+        <div className='py-4 w-full'>
           <Content imageSrc="/works.png" title={t('app.top.umoama_contents.works.title')} navigation={t('app.top.umoama_contents.works.navigation')} />
         </div>
 
