@@ -458,7 +458,7 @@
     "@nextui-org/shared-utils" "2.0.5"
     "@nextui-org/use-image" "2.0.5"
 
-"@nextui-org/input@2.2.2":
+"@nextui-org/input@2.2.2", "@nextui-org/input@^2.2.2":
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/@nextui-org/input/-/input-2.2.2.tgz#db5d4bac963a9e5f53403254570ddbefd262a0c9"
   dependencies:
@@ -4323,6 +4323,7 @@ streamsearch@^1.1.0:
   resolved "https://registry.yarnpkg.com/streamsearch/-/streamsearch-1.1.0.tgz#404dd1e2247ca94af554e841a8ef0eaa238da764"
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   dependencies:

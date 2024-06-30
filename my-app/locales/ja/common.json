@@ -28,11 +28,17 @@
         "umorih": "UMORiH",
         "amaneriy": "AMANERiY"
       }
+    },
+    "search": {
+      "result": "の検索結果"
     }
   },
   "component": {
     "post_card": {
       "sub_title": "【サブタイトル】"
+    },
+    "search_button": {
+      "label": "検索"
     }
   }
 }

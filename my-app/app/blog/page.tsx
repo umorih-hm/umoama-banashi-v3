@@ -5,6 +5,7 @@ export const revalidate = 60;
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { PostCard } from '../../components/elements/PostCard';
 import { Breadcrumb } from '../../components/elements/Breadcrumbs';
+import { SearchButton } from '../../components/elements/searchButton';
 
 export default async function Home() {
   const currentPosts: NotionPost[] = await getAllPages();
@@ -25,9 +26,12 @@ export default async function Home() {
   return (
     <div className="container mx-auto min-h-screen">
       <main className="flex bg-background flex-col justify-center p-8 lg:w-5/6 mx-auto">
-        <div className="pb-8">
-          <Breadcrumb links={links} />
-        </div>
+        <div className='flex justify-between pb-4'>
+          <div>
+            <Breadcrumb links={links} />
+          </div>
+            <SearchButton/>
+          </div>
         {/* 最新の投稿 */}
         <h1 className="font-bold">{t('app.blog.list.current')}</h1>
         <ScrollArea className="w-full whitespace-nowrap rounded-md">

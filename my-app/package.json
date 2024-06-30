@@ -11,6 +11,7 @@
   "dependencies": {
     "@nextui-org/breadcrumbs": "^2.0.10",
     "@nextui-org/image": "^2.0.29",
+    "@nextui-org/input": "^2.2.2",
     "@nextui-org/navbar": "^2.0.33",
     "@nextui-org/react": "^2.4.0",
     "@nextui-org/system": "^2.2.2",
