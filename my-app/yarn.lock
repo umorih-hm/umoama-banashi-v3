@@ -484,7 +484,7 @@
     "@nextui-org/system-rsc" "2.1.2"
     "@react-aria/utils" "3.24.1"
 
-"@nextui-org/link@2.0.32":
+"@nextui-org/link@2.0.32", "@nextui-org/link@^2.0.32":
   version "2.0.32"
   resolved "https://registry.yarnpkg.com/@nextui-org/link/-/link-2.0.32.tgz#30f640870508b36a1c7bc6f3181f42a7fb0c0949"
   dependencies:

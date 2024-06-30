@@ -25,6 +25,10 @@ export const Header = () => {
       to: '/',
     },
     {
+      title: t('app.layout.works'),
+      to: '/',
+    },
+    {
       title: t('app.layout.about'),
       to: '/',
     },
@@ -36,21 +40,23 @@ export const Header = () => {
 
   return (
     <div>
-      <Navbar isBordered className="bg-background py-2">
-        <NavbarContent className="mx-auto ">
-          <Link href="/">
-            <Image width={200} alt="NextUI hero Image" src="/logo.svg" />
-          </Link>
-        </NavbarContent>
-        <NavbarContent className="gap-4 mx-auto">
-          {header.map((item, index) => {
-            return (
-              <NavbarItem key={index}>
-                <Link href={item.to}>{item.title}</Link>
-              </NavbarItem>
-            );
-          })}
-        </NavbarContent>
+      <Navbar isBordered className="bg-background py-6">
+        <div className='flex flex-col mx-auto'>
+          <NavbarContent className="mx-auto">
+            <Link href="/">
+              <Image width={200} alt="NextUI hero Image" src="/logo.svg" />
+            </Link>
+          </NavbarContent>
+          <NavbarContent className="gap-4 pt-2">
+            {header.map((item, index) => {
+              return (
+                <NavbarItem key={index}>
+                  <Link href={item.to}>{item.title}</Link>
+                </NavbarItem>
+              );
+            })}
+          </NavbarContent>
+        </div>
       </Navbar>
     </div>
   );
