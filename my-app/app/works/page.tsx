@@ -30,7 +30,7 @@ export default async function Home() {
           <div>
             <Breadcrumb links={links} />
           </div>
-            <SearchButton/>
+            <SearchButton dbName='works'/>
           </div>
         {/* 最新の投稿 */}
         <h1 className="font-bold">{t('app.works.list.current')}</h1>

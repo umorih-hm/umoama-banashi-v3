@@ -8,7 +8,7 @@ import { Breadcrumb } from '../../../components/elements/Breadcrumbs';
 import { SearchButton } from '../../../components/elements/searchButton';
 
 export default async function Search({ searchParams }: { searchParams: { keyword: string } }) {
-  const searchedPosts: NotionPost[] = await getAllPages('note' , '', searchParams.keyword);
+  const searchedPosts: NotionPost[] = await getAllPages('works' , '', searchParams.keyword);
   const { t } = useTranslation('common');
   const links: Breadcrumb[] = [
     {
@@ -16,12 +16,12 @@ export default async function Search({ searchParams }: { searchParams: { keyword
       href: '/',
     },
     {
-      title: t('app.layout.note'),
-      href: '/note',
+      title: t('app.layout.works'),
+      href: '/works',
     },
     {
       title: `${searchParams.keyword}${t('app.search.result')}`,
-      href: `/note/search?keyword=${searchParams.keyword}`,
+      href: `/works/search?keyword=${searchParams.keyword}`,
     },
   ]
 
@@ -32,7 +32,7 @@ export default async function Search({ searchParams }: { searchParams: { keyword
           <div>
             <Breadcrumb links={links} />
           </div>
-            <SearchButton dbName='note'/>
+            <SearchButton dbName='works'/>
           </div>
         {/* 検索キーワード */}
         <h1 className="font-bold">{searchParams.keyword} {t('app.search.result')}</h1>
