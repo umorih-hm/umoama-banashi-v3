@@ -8,9 +8,9 @@ import { Breadcrumb } from '../../components/elements/Breadcrumbs';
 import { SearchButton } from '../../components/elements/searchButton';
 
 export default async function Home() {
-  const currentPosts: NotionPost[] = await getAllPages();
-  const umorihPosts: NotionPost[] = await getAllPages('UMORiH');
-  const amaneriyPosts: NotionPost[] = await getAllPages('AMANERiY');
+  const currentPosts: NotionPost[] = await getAllPages('note');
+  const umorihPosts: NotionPost[] = await getAllPages('note', 'UMORiH');
+  const amaneriyPosts: NotionPost[] = await getAllPages('note', 'AMANERiY');
   const { t } = useTranslation('common');
   const links: Breadcrumb[] = [
     {

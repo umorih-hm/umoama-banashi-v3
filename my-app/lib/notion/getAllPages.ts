@@ -1,7 +1,19 @@
 import { notion } from './notion';
 
-export async function getAllPages(person?: string, keyword?: string): Promise<NotionPost[]> {
-  const dataBaseId:string = process.env.DATABASE_ID ? process.env.DATABASE_ID : ''
+export async function getAllPages(dbName: 'note' | 'works', person?: string, keyword?: string): Promise<NotionPost[]>{
+  // dbName から databaseId を抽出
+  let dataBaseId: string
+  switch(dbName) {
+    case 'note':
+      dataBaseId = process.env.DATABASE_ID_NOTE ?? ''
+      break
+    case 'works':
+      dataBaseId = process.env.DATABASE_ID_WORKS ?? ''
+      break
+    default:
+      dataBaseId = ''
+      break
+  }
   const response = await notion.databases.query({
     database_id: dataBaseId,
     sorts: [
@@ -57,7 +69,7 @@ export async function getAllPages(person?: string, keyword?: string): Promise<No
     // title
     const title = post.properties.Title.title[0]?.plain_text;
     // subTitle
-    const subTitle = post.properties.SubTitle.rich_text[0]?.plain_text;
+    const subTitle = post.properties.SubTitle.rich_text[0]?.plain_text ?? '';
     // date
     const date = post.properties.Date.date.start;
     // image

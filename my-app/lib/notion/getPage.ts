@@ -1,6 +1,6 @@
 import { notion } from './notion';
 
-export async function getPageInfo(pageId: string): Promise<NotionPost> {
+export async function getPageInfo(pageId: string): Promise<NotionPost>{
   const response = await notion.pages.retrieve({ page_id: pageId });
   const post = response.properties;
 
@@ -9,7 +9,7 @@ export async function getPageInfo(pageId: string): Promise<NotionPost> {
   // title
   const title = post.Title.title[0]?.plain_text;
   // subTitle
-  const subTitle = post.SubTitle.rich_text[0]?.plain_text;
+  const subTitle = post.SubTitle.rich_text[0]?.plain_text ?? '';
   // date
   const date = post.Date.date.start;
   // image

@@ -8,7 +8,7 @@ import { Breadcrumb } from '../../../components/elements/Breadcrumbs';
 import { SearchButton } from '../../../components/elements/searchButton';
 
 export default async function Search({ searchParams }: { searchParams: { keyword: string } }) {
-  const searchedPosts: NotionPost[] = await getAllPages('', searchParams.keyword);
+  const searchedPosts: NotionPost[] = await getAllPages('note' , '', searchParams.keyword);
   const { t } = useTranslation('common');
   const links: Breadcrumb[] = [
     {
