@@ -39,7 +39,7 @@ export default async function Search({ searchParams }: { searchParams: { keyword
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
             {searchedPosts.map((post: NotionPost, index: number) => (
-              <PostCard post={post} index={index} key={index} />
+              <PostCard post={post} index={index} dbName='works' key={index} />
             ))}
           </div>
           <ScrollBar orientation="horizontal" />

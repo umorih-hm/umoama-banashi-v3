@@ -37,7 +37,7 @@ export default async function Home() {
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
             {currentPosts.map((post: NotionPost, index: number) => (
-              <PostCard post={post} index={index} key={index} />
+              <PostCard post={post} index={index} dbName='note' key={index} />
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
@@ -48,7 +48,7 @@ export default async function Home() {
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
             {umorihPosts.map((post: NotionPost, index: number) => (
-              <PostCard post={post} index={index} key={index} />
+              <PostCard post={post} index={index} dbName='note' key={index} />
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
@@ -59,7 +59,7 @@ export default async function Home() {
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
             {amaneriyPosts.map((post: NotionPost, index: number) => (
-              <PostCard post={post} index={index} key={index} />
+              <PostCard post={post} index={index} dbName='note' key={index} />
             ))}
           </div>
           <ScrollBar orientation="horizontal" />

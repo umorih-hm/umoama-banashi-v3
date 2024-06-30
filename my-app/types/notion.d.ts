@@ -7,8 +7,3 @@ interface NotionPost {
   tags: string[];
   person: string;
 }
-
-interface PostCardRequest {
-  post: NotionPost;
-  index: number;
-}

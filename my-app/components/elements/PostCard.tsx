@@ -1,10 +1,16 @@
 import Link from 'next/link';
 import NextImage from 'next/image';
 import { User, Tooltip } from '@nextui-org/react';
-
 import useTranslation from 'next-translate/useTranslation';
 
-export const PostCard = ({ post, index }: PostCardRequest) => {
+interface PostCardRequest {
+  post: NotionPost;
+  index: number;
+  dbName: 'note' | 'works'
+}
+
+
+export const PostCard = ({ post, index, dbName }: PostCardRequest) => {
   const { t } = useTranslation('common');
 
   return (
@@ -19,7 +25,7 @@ export const PostCard = ({ post, index }: PostCardRequest) => {
       color="success"
     >
       {/* サブブタイトル */}
-      <Link href={`/note/${post.id}`} key={index}>
+      <Link href={`/${dbName}/${post.id}`} key={index}>
         {/* サムネ画像 */}
         <NextImage
           width="200"
