@@ -1,4 +1,7 @@
+import Link from 'next/link';
+import NextImage from 'next/image';
 import { Button } from '@nextui-org/react';
+import { Content } from '../components/elements/Content'
 import useTranslation from 'next-translate/useTranslation';
 
 export default function Home() {
@@ -17,8 +20,23 @@ export default function Home() {
 
         {/* umoama contents */}
         <h1 className="text-md md:text-xl font-bold mb-6">
-          {t('app.top.umoama_contents')}
+          {t('app.top.umoama_contents.title')}
         </h1>
+
+        {/* UMOAMA NOTE */}
+        <div className='py-4'>
+          <Content imageSrc="/note.png" title={t('app.top.umoama_contents.note.title')} navigation={t('app.top.umoama_contents.note.navigation')} />
+        </div>
+
+        {/* UMOAMA MAP */}
+        <div className='py-4'>
+          <Content imageSrc="/map.png" title={t('app.top.umoama_contents.map.title')} navigation={t('app.top.umoama_contents.map.navigation')} />
+        </div>
+
+        {/* UMOAMA WORKS */}
+        <div className='py-4'>
+          <Content imageSrc="/works.png" title={t('app.top.umoama_contents.works.title')} navigation={t('app.top.umoama_contents.works.navigation')} />
+        </div>
 
         {/* member */}
         <h1 className="text-md md:text-xl font-bold mb-6">
