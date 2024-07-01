@@ -21,23 +21,23 @@ export default async function Home() {
       title: t('app.layout.works'),
       href: '/works',
     },
-  ]
+  ];
 
   return (
     <div className="container mx-auto min-h-screen">
-      <main className="flex bg-background flex-col justify-center p-8 lg:w-5/6 mx-auto">
-        <div className='flex justify-between pb-4'>
+      <main className="flex bg-background flex-col justify-center p-8 w-5/6 md:w-4/6 mx-auto">
+        <div className="flex justify-between pb-4">
           <div>
             <Breadcrumb links={links} />
           </div>
-            <SearchButton dbName='works'/>
-          </div>
+          <SearchButton dbName="works" />
+        </div>
         {/* 最新の投稿 */}
         <h1 className="font-bold">{t('app.works.list.current')}</h1>
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
             {currentPosts.map((post: NotionPost, index: number) => (
-              <PostCard post={post} index={index} dbName='works' key={index} />
+              <PostCard post={post} index={index} dbName="works" key={index} />
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
@@ -48,7 +48,7 @@ export default async function Home() {
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
             {umorihPosts.map((post: NotionPost, index: number) => (
-              <PostCard post={post} index={index} dbName='works' key={index} />
+              <PostCard post={post} index={index} dbName="works" key={index} />
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
@@ -59,7 +59,7 @@ export default async function Home() {
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
             {amaneriyPosts.map((post: NotionPost, index: number) => (
-              <PostCard post={post} index={index} dbName='works' key={index} />
+              <PostCard post={post} index={index} dbName="works" key={index} />
             ))}
           </div>
           <ScrollBar orientation="horizontal" />
