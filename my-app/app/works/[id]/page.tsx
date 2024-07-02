@@ -38,10 +38,10 @@ export default async function Page({ params }: { params: { id: string } }) {
         src="https://embed.zenn.studio/js/listen-embed-event.js"
         strategy="afterInteractive"
       />
-      <div className="pt-8 pb-2 px-8 w-full md:w-5/6 lg:w-4/6 mx-auto">
+      <div className="pt-8 pb-2 px-8 w-full md:w-5/6 mx-auto">
         <Breadcrumb links={links} />
       </div>
-      <div className="container-xl flex bg-background min-h-screen flex-col items-center justify-center p-8 w-full md:w-5/6 lg:w-4/6 mx-auto">
+      <div className="container-xl flex bg-background min-h-screen flex-col items-center justify-center p-8 w-full md:w-5/6 mx-auto">
         <div className="h-[300px] relative w-full mb-4">
           {/* サムネ画像 */}
           <NextImage
@@ -69,13 +69,17 @@ export default async function Page({ params }: { params: { id: string } }) {
             description={`投稿日：${post.date}`}
           />
         </div>
-        <div
-          className="znc mx-auto content w-full"
-          dangerouslySetInnerHTML={{
-            __html: htmlContent,
-          }}
-        />
-        <Toc></Toc>
+        <div className="flex justify-between gap-6 w-full pt-4">
+          <div
+            className="znc mx-auto content w-full lg:w-9/12"
+            dangerouslySetInnerHTML={{
+              __html: htmlContent,
+            }}
+          />
+          <div className="hidden lg:block w-full lg:w-3/12">
+            <Toc></Toc>
+          </div>
+        </div>
       </div>
     </>
   );
