@@ -25,7 +25,7 @@ export default async function Home() {
 
   return (
     <div className="container mx-auto min-h-screen">
-      <main className="flex bg-background flex-col justify-center p-8 w-5/6 md:w-4/6 mx-auto">
+      <main className="flex bg-background flex-col justify-center p-8 w-full md:w-5/6 lg:w-4/6 mx-auto">
         <div className="flex justify-between pb-4">
           <div>
             <Breadcrumb links={links} />
