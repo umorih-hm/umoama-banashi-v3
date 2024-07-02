@@ -69,14 +69,14 @@ export default async function Page({ params }: { params: { id: string } }) {
             description={`投稿日：${post.date}`}
           />
         </div>
-        <div className="flex justify-between gap-12">
+        <div className="flex justify-between gap-6 w-full pt-4">
           <div
-            className="znc mx-auto content w-full md:w-4/5"
+            className="znc mx-auto content w-full lg:w-9/12"
             dangerouslySetInnerHTML={{
               __html: htmlContent,
             }}
           />
-          <div className="invisible lg:visible w-full md:w-1/5">
+          <div className="hidden lg:block w-full lg:w-3/12">
             <Toc></Toc>
           </div>
         </div>

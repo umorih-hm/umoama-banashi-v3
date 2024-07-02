@@ -90,9 +90,6 @@
 }
 
 .toc {
-  background-color: var(--content-bg-primary);
-  border: 1px solid var(--content-border);
-  border-radius: 0.25rem;
   padding: 1rem;
   font-size: 0.875rem;
 }
