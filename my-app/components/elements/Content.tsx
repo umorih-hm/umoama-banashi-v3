@@ -7,29 +7,32 @@ interface ContentRequest {
   imageSrc: string;
   title: string;
   navigation: string;
+  href: string;
 }
 
-export const Content = ({ imageSrc, title, navigation }: ContentRequest) => {
+export const Content = ({ imageSrc, title, navigation, href }: ContentRequest) => {
   const { t } = useTranslation('common');
 
   return (
     <div>
       <div className="sm:flex sm:gap-12">
         <div>
-          <NextImage
-            width="405"
-            height="256"
-            alt=""
-            className="block mx-auto rounded-lg hover:opacity-80"
-            src={imageSrc}
-          />
-          <Button
+          <Link href={href}>
+            <NextImage
+              width="405"
+              height="256"
+              alt=""
+              className="block mx-auto rounded-lg hover:opacity-80"
+              src={imageSrc}
+            />
+          </Link>
+          {/* <Button
             radius="full"
             variant="bordered"
             className="block mx-auto mt-4"
           >
             {t('component.button.see_it')}
-          </Button>
+          </Button> */}
         </div>
         <div>
           <h1 className="font-bold pb-4">{title}</h1>

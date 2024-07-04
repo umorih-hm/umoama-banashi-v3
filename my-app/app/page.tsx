@@ -29,6 +29,7 @@ export default function Home() {
             imageSrc="/note.png"
             title={t('app.top.umoama_contents.note.title')}
             navigation={t('app.top.umoama_contents.note.navigation')}
+            href="/note"
           />
         </div>
 
@@ -38,6 +39,7 @@ export default function Home() {
             imageSrc="/map.png"
             title={t('app.top.umoama_contents.map.title')}
             navigation={t('app.top.umoama_contents.map.navigation')}
+            href="/"
           />
         </div>
 
@@ -47,6 +49,7 @@ export default function Home() {
             imageSrc="/works.png"
             title={t('app.top.umoama_contents.works.title')}
             navigation={t('app.top.umoama_contents.works.navigation')}
+            href="/works"
           />
         </div>
 
