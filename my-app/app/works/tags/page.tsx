@@ -40,7 +40,7 @@ export default async function Tag({
       <main className="flex bg-background flex-col justify-center py-4 lgp-6 w-full mx-auto">
         <div className='flex flex-col lgflex-row gap-12'>
           <div className='w-full lgw-1/12'>
-            <SideBar dbName='works'/>
+            <SideBar dbName='works' activeTag={searchParams.tag}/>
           </div>
           {/* ハッシュタグ */}
           <div className='w-full lgw-11/12'>

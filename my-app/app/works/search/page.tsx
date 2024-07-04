@@ -40,7 +40,7 @@ export default async function Search({
       <main className="flex bg-background flex-col justify-center py-4 lg:p-6 w-full mx-auto">
         <div className='flex flex-col lg:flex-row gap-12'>
           <div className='w-full lg:w-1/12'>
-            <SideBar dbName='works'/>
+            <SideBar dbName='works' activeTag=''/>
           </div>
           {/* ハッシュタグ */}
           <div className='w-full lg:w-11/12'>

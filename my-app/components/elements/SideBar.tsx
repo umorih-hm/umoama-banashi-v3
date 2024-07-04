@@ -5,9 +5,10 @@ import useTranslation from 'next-translate/useTranslation';
 
 interface SideBarRequest {
   dbName: 'note' | 'works';
+  activeTag: string;
 }
 
-export const SideBar = async ({ dbName }: SideBarRequest) => {
+export const SideBar = async ({ dbName, activeTag }: SideBarRequest) => {
   const currentPosts = await getAllPages(dbName);
   const { t } = useTranslation('common');
 
@@ -20,7 +21,7 @@ export const SideBar = async ({ dbName }: SideBarRequest) => {
           radius="lg"
           variant="light"
           color="primary"
-          className='font-semibold border-2 border-slate-200 lg:border-0'
+          className={`font-semibold border-2 border-slate-200 lg:border-0 ${ activeTag === 'ALL' ? 'text-green-500' : ''}`}
         >
           {t('component.side_bar.all')}
         </Button>
@@ -33,7 +34,7 @@ export const SideBar = async ({ dbName }: SideBarRequest) => {
               radius="lg"
               variant="light"
               color="primary"
-              className='font-semibold border-2 border-slate-200 lg:border-0'
+              className={`font-semibold border-2 border-slate-200 lg:border-0 ${ activeTag === tag ? 'text-green-500' : ''}`}
             >
               {tag}
             </Button>
