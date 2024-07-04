@@ -14,28 +14,27 @@ export const SideBar = async ({ dbName }: SideBarRequest) => {
   return (
     <ScrollArea className="w-full whitespace-nowrap rounded-md">
       <div className='flex md:flex-col gap-1'>
-        <div>
-          <Button
-            href={`/${dbName}`}
-            as={Link}
-            radius="full"
-            variant="bordered"
-          >
-            {t('component.side_bar.all')}
-          </Button>
-        </div>
+        <Button
+          href={`/${dbName}`}
+          as={Link}
+          radius="lg"
+          variant="light"
+          color="primary"
+        >
+          {t('component.side_bar.all')}
+        </Button>
         {currentPosts.tags.map(
           (tag: string, index: number) => (
-            <div key={index}>
-              <Button
-                href={`/${dbName}/tags?tag=${tag}`}
-                as={Link}
-                radius="full"
-                variant="bordered"
-              >
-                {tag}
-              </Button>
-            </div>
+            <Button
+              key={index}
+              href={`/${dbName}/tags?tag=${tag}`}
+              as={Link}
+              radius="lg"
+              variant="light"
+              color="primary"
+            >
+              {tag}
+            </Button>
           )
         )}
       </div>

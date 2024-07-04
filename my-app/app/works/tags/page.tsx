@@ -37,13 +37,13 @@ export default async function Tag({
 
   return (
     <div className="container mx-auto min-h-screen">
-      <main className="flex bg-background flex-col justify-center p-2 md:p-8 w-full mx-auto">
-        <div className='flex flex-col md:flex-row gap-6'>
-          <div className='w-full md:w-2/12'>
+      <main className="flex bg-background flex-col justify-center p-2 md:p-6 w-full mx-auto">
+        <div className='flex flex-col md:flex-row gap-12'>
+          <div className='w-full md:w-1/12'>
             <SideBar dbName='works'/>
           </div>
           {/* ハッシュタグ */}
-          <div className='w-full md:w-10/12'>
+          <div className='w-full md:w-11/12'>
             <h1 className="font-bold"># {searchParams.tag}</h1>
             <ScrollArea className="w-full whitespace-nowrap rounded-md">
               <div className="flex w-max space-x-4 pt-2">
