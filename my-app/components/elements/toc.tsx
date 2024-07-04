@@ -34,8 +34,8 @@ export const Toc = () => {
   }, []);
 
   return (
-    <div className="sticky top-0 pt-8">
-      <div className="toc px-0 pb-8 text-base"></div> {/* 目次の表示部分 */}
+    <div className="sticky top-0">
+      <div className="toc px-0 pb-8 text-lg"></div> {/* 目次の表示部分 */}
     </div>
   );
 };
