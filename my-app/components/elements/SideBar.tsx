@@ -20,7 +20,7 @@ export const SideBar = async ({ dbName }: SideBarRequest) => {
           radius="lg"
           variant="light"
           color="primary"
-          className='border-2 border-slate-200 md:border-0'
+          className='border-2 border-slate-200 lg:border-0'
         >
           {t('component.side_bar.all')}
         </Button>
@@ -33,7 +33,7 @@ export const SideBar = async ({ dbName }: SideBarRequest) => {
               radius="lg"
               variant="light"
               color="primary"
-              className='border-2 border-slate-200 md:border-0'
+              className='border-2 border-slate-200 lg:border-0'
             >
               {tag}
             </Button>

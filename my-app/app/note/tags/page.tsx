@@ -37,13 +37,13 @@ export default async function Tag({
 
   return (
     <div className="container mx-auto min-h-screen">
-      <main className="flex bg-background flex-col justify-center py-4 md:p-6 w-full mx-auto">
-        <div className='flex flex-col md:flex-row gap-12'>
-          <div className='w-full md:w-1/12'>
+      <main className="flex bg-background flex-col justify-center py-4 lg:p-6 w-full mx-auto">
+        <div className='flex flex-col lg:flex-row gap-12'>
+          <div className='w-full lg:w-1/12'>
             <SideBar dbName='note'/>
           </div>
         {/* ハッシュタグ */}
-          <div className='w-full md:w-11/12'>
+          <div className='w-full lg:w-11/12'>
             <div className="flex justify-between pb-8">
               <div>
                 <Breadcrumb links={links} />
