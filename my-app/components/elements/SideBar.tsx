@@ -13,7 +13,7 @@ export const SideBar = async ({ dbName }: SideBarRequest) => {
 
   return (
     <ScrollArea className="w-full whitespace-nowrap rounded-md">
-      <div className='flex md:flex-col gap-1'>
+      <div className='flex lg:flex-col gap-1'>
         <Button
           href={`/${dbName}`}
           as={Link}
