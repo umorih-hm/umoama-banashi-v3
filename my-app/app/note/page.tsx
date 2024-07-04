@@ -8,9 +8,9 @@ import { Breadcrumb } from '../../components/elements/Breadcrumbs';
 import { SearchButton } from '../../components/elements/searchButton';
 
 export default async function Home() {
-  const currentPosts: NotionPost[] = await getAllPages('note');
-  const umorihPosts: NotionPost[] = await getAllPages('note', 'UMORiH');
-  const amaneriyPosts: NotionPost[] = await getAllPages('note', 'AMANERiY');
+  const currentPosts = await getAllPages('note');
+  const umorihPosts = await getAllPages('note', 'UMORiH');
+  const amaneriyPosts = await getAllPages('note', 'AMANERiY');
   const { t } = useTranslation('common');
   const links: Breadcrumb[] = [
     {
@@ -36,9 +36,11 @@ export default async function Home() {
         <h1 className="font-bold">{t('app.note.list.current')}</h1>
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
-            {currentPosts.map((post: NotionPost, index: number) => (
-              <PostCard post={post} index={index} dbName="note" key={index} />
-            ))}
+            {currentPosts.postsProperties.map(
+              (post: NotionPost, index: number) => (
+                <PostCard post={post} index={index} dbName="note" key={index} />
+              )
+            )}
           </div>
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
@@ -47,9 +49,11 @@ export default async function Home() {
         <h1 className="font-bold">{t('app.note.list.umorih')}</h1>
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
-            {umorihPosts.map((post: NotionPost, index: number) => (
-              <PostCard post={post} index={index} dbName="note" key={index} />
-            ))}
+            {umorihPosts.postsProperties.map(
+              (post: NotionPost, index: number) => (
+                <PostCard post={post} index={index} dbName="note" key={index} />
+              )
+            )}
           </div>
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
@@ -58,9 +62,11 @@ export default async function Home() {
         <h1 className="font-bold">{t('app.note.list.amaneriy')}</h1>
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
-            {amaneriyPosts.map((post: NotionPost, index: number) => (
-              <PostCard post={post} index={index} dbName="note" key={index} />
-            ))}
+            {amaneriyPosts.postsProperties.map(
+              (post: NotionPost, index: number) => (
+                <PostCard post={post} index={index} dbName="note" key={index} />
+              )
+            )}
           </div>
           <ScrollBar orientation="horizontal" />
         </ScrollArea>

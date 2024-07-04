@@ -5,7 +5,7 @@ export async function getAllPages(
   person?: string,
   keyword?: string,
   tag?: string
-): Promise<NotionPost[]> {
+): Promise<{ postsProperties: NotionPost[]; tags: string[] }> {
   // dbName から databaseId を抽出
   let dataBaseId: string;
   switch (dbName) {
@@ -75,6 +75,7 @@ export async function getAllPages(
   });
 
   const posts = response.results;
+  const allTags: string[] = [];
   const postsProperties = posts.map((post: any) => {
     // id
     const id = post.id;
@@ -90,6 +91,9 @@ export async function getAllPages(
     const tags = post.properties.Tags.multi_select.map(
       (item: any) => item.name
     );
+    post.properties.Tags.multi_select.forEach((tag: any) =>
+      allTags.push(tag.name)
+    );
     // person
     const person = post.properties.Person.select.name;
 
@@ -97,5 +101,8 @@ export async function getAllPages(
     return { id, title, subTitle, date, image, tags, person };
   });
 
-  return postsProperties;
+  return {
+    postsProperties: postsProperties,
+    tags: allTags,
+  };
 }
