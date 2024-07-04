@@ -1,19 +1,25 @@
 import { notion } from './notion';
 
-export async function getAllPages(dbName: 'note' | 'works', person?: string, keyword?: string): Promise<NotionPost[]>{
+export async function getAllPages(
+  dbName: 'note' | 'works',
+  person?: string,
+  keyword?: string,
+  tag?: string
+): Promise<NotionPost[]> {
   // dbName から databaseId を抽出
-  let dataBaseId: string
-  switch(dbName) {
+  let dataBaseId: string;
+  switch (dbName) {
     case 'note':
-      dataBaseId = process.env.DATABASE_ID_NOTE ?? ''
-      break
+      dataBaseId = process.env.DATABASE_ID_NOTE ?? '';
+      break;
     case 'works':
-      dataBaseId = process.env.DATABASE_ID_WORKS ?? ''
-      break
+      dataBaseId = process.env.DATABASE_ID_WORKS ?? '';
+      break;
     default:
-      dataBaseId = ''
-      break
+      dataBaseId = '';
+      break;
   }
+
   const response = await notion.databases.query({
     database_id: dataBaseId,
     sorts: [
@@ -37,6 +43,12 @@ export async function getAllPages(dbName: 'note' | 'works', person?: string, key
           },
         },
         {
+          property: 'Tags',
+          multi_select: {
+            contains: tag ?? '',
+          },
+        },
+        {
           or: [
             {
               property: 'Title',
@@ -56,8 +68,8 @@ export async function getAllPages(dbName: 'note' | 'works', person?: string, key
                 contains: keyword ?? '',
               },
             },
-          ]
-        }
+          ],
+        },
       ],
     },
   });
