@@ -51,7 +51,7 @@ export const Header = () => {
             {header.map((item, index) => {
               return (
                 <NavbarItem key={index}>
-                  <Link href={item.to}>{item.title}</Link>
+                  <Link href={item.to} className='text-sm sm:text-base'>{item.title}</Link>
                 </NavbarItem>
               );
             })}
