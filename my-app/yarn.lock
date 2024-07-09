@@ -257,7 +257,7 @@
     "@react-types/combobox" "3.11.1"
     "@react-types/shared" "3.23.1"
 
-"@nextui-org/avatar@2.0.30":
+"@nextui-org/avatar@2.0.30", "@nextui-org/avatar@^2.0.30":
   version "2.0.30"
   resolved "https://registry.yarnpkg.com/@nextui-org/avatar/-/avatar-2.0.30.tgz#be8e112013dadacd45615e79af3248566adfaba2"
   dependencies:
@@ -418,7 +418,7 @@
     "@react-types/datepicker" "3.7.4"
     "@react-types/shared" "3.23.1"
 
-"@nextui-org/divider@2.0.28":
+"@nextui-org/divider@2.0.28", "@nextui-org/divider@^2.0.28":
   version "2.0.28"
   resolved "https://registry.yarnpkg.com/@nextui-org/divider/-/divider-2.0.28.tgz#e574b5d212b0e81f78d8f9a54783ce9927b65582"
   dependencies:

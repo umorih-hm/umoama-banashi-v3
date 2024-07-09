@@ -1,7 +1,8 @@
-import { Link, Button } from '@nextui-org/react';
+import { Link, Button, Divider } from '@nextui-org/react';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { getAllPages } from '@/lib/notion/getAllPages';
 import useTranslation from 'next-translate/useTranslation';
+import { Avatars } from './Avatars';
 
 export const SideBar = async ({ dbName, activeTag }: SideBarProps) => {
   const currentPosts = await getAllPages(dbName);
@@ -9,6 +10,8 @@ export const SideBar = async ({ dbName, activeTag }: SideBarProps) => {
 
   return (
     <ScrollArea className="w-full whitespace-nowrap rounded-md">
+      <Avatars dbName={dbName}></Avatars>
+      <Divider className="my-3" />
       <div className="flex lg:flex-col gap-1">
         <Button
           href={`/${dbName}`}

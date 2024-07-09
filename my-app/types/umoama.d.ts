@@ -1,4 +1,4 @@
-type = 'note' | 'works';
+type dbName = 'note' | 'works';
 
 interface Breadcrumb {
   title: string;
@@ -25,6 +25,11 @@ interface PageListProps {
   dbName: dbName;
 }
 
+interface PersonPageListProps {
+  dbName: dbName;
+  person: string;
+}
+
 interface PostCardProps {
   post: NotionPost;
   index: number;
@@ -48,4 +53,8 @@ interface TagPageListProps {
 interface SideBarProps {
   dbName: dbNames;
   activeTag: string;
+}
+
+interface AvatarsProps {
+  dbName: dbNames;
 }
