@@ -2,19 +2,12 @@ import Link from 'next/link';
 import NextImage from 'next/image';
 import useTranslation from 'next-translate/useTranslation';
 
-interface ContentRequest {
-  imageSrc: string;
-  title: string;
-  navigation: string;
-  href: string;
-}
-
 export const Content = ({
   imageSrc,
   title,
   navigation,
   href,
-}: ContentRequest) => {
+}: ContentProps) => {
   const { t } = useTranslation('common');
 
   return (

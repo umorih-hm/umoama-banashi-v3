@@ -8,11 +8,6 @@ import { Breadcrumb } from './Breadcrumbs';
 import { SearchButton } from './searchButton';
 import { SideBar } from './SideBar';
 
-interface TagPageListProps {
-  dbName: 'note' | 'works';
-  tag: string;
-}
-
 export const TagPageList = async ({ dbName, tag }: TagPageListProps) => {
   const searchedPosts = await getAllPages(dbName, '', '', tag);
   const { t } = useTranslation('common');

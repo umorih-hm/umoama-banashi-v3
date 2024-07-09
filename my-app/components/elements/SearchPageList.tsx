@@ -8,11 +8,6 @@ import { Breadcrumb } from '@/components/elements/Breadcrumbs';
 import { SearchButton } from '@/components/elements/searchButton';
 import { SideBar } from '@/components/elements/SideBar';
 
-interface SearchPageListProps {
-  dbName: 'note' | 'works';
-  keyword: string;
-}
-
 export const SearchPageList = async ({
   dbName,
   keyword,

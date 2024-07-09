@@ -5,10 +5,6 @@ import { useRouter } from 'next/navigation';
 import useTranslation from 'next-translate/useTranslation';
 import { Input } from '@nextui-org/react';
 
-interface searchButtonProps {
-  dbName: 'note' | 'works';
-}
-
 export const SearchButton = ({ dbName }: searchButtonProps) => {
   const { t } = useTranslation('common');
   const [keyword, setQuery] = useState('');

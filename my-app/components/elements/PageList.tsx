@@ -8,10 +8,6 @@ import { Breadcrumb } from './Breadcrumbs';
 import { SearchButton } from './searchButton';
 import { SideBar } from './SideBar';
 
-interface PageListProps {
-  dbName: 'note' | 'works';
-}
-
 export const PageList = async ({ dbName }: PageListProps) => {
   const currentPosts = await getAllPages(dbName);
   const umorihPosts = await getAllPages(dbName, 'UMORiH');

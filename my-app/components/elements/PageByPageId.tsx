@@ -9,11 +9,6 @@ import { Breadcrumb } from '@/components/elements/Breadcrumbs';
 import NextImage from 'next/image';
 import { User } from '@nextui-org/react';
 
-interface PageProps {
-  dbName: 'note' | 'works';
-  id: string;
-}
-
 export const PageByPageId = async ({ dbName, id }: PageProps) => {
   const htmlContent: any = await getPageContent(id);
   const post = await getPageInfo(id);

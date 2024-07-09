@@ -1,20 +1,15 @@
 'use client';
 
-import {
-  Breadcrumbs,
-  BreadcrumbItem,
-} from '@nextui-org/react';
+import { Breadcrumbs, BreadcrumbItem } from '@nextui-org/react';
 
-interface BreadcrumbsProps {
-  links: Breadcrumb[];
-}
-
-export const Breadcrumb = ({links} : BreadcrumbsProps) => {
+export const Breadcrumb = ({ links }: BreadcrumbsProps) => {
   return (
-    <Breadcrumbs size='lg'>
+    <Breadcrumbs size="lg">
       {links.map((item, index) => {
         return (
-          <BreadcrumbItem key={index} href={item.href}>{item.title}</BreadcrumbItem>
+          <BreadcrumbItem key={index} href={item.href}>
+            {item.title}
+          </BreadcrumbItem>
         );
       })}
     </Breadcrumbs>

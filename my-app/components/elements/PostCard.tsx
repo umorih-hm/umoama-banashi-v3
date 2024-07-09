@@ -3,13 +3,7 @@ import NextImage from 'next/image';
 import { User, Tooltip } from '@nextui-org/react';
 import useTranslation from 'next-translate/useTranslation';
 
-interface PostCardRequest {
-  post: NotionPost;
-  index: number;
-  dbName: 'note' | 'works';
-}
-
-export const PostCard = ({ post, index, dbName }: PostCardRequest) => {
+export const PostCard = ({ post, index, dbName }: PostCardProps) => {
   const { t } = useTranslation('common');
 
   return (
