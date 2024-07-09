@@ -1,5 +1,5 @@
 import { Button } from '@nextui-org/react';
-import { Content } from '../components/elements/Content';
+import { Content } from '@/components/elements/Content';
 import useTranslation from 'next-translate/useTranslation';
 
 export default function Home() {

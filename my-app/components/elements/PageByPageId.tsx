@@ -1,6 +1,6 @@
 import useTranslation from 'next-translate/useTranslation';
 import 'zenn-content-css';
-import { Toc } from '@/components/elements/toc';
+import { Toc } from '@/components/elements/Toc';
 import Script from 'next/script';
 
 import { getPageInfo } from '@/lib/notion/getPage';

@@ -1,6 +1,6 @@
 import { Link, Button } from '@nextui-org/react';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
-import { getAllPages } from '../../lib/notion/getAllPages';
+import { getAllPages } from '@/lib/notion/getAllPages';
 import useTranslation from 'next-translate/useTranslation';
 
 export const SideBar = async ({ dbName, activeTag }: SideBarProps) => {

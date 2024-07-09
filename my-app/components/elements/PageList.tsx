@@ -1,11 +1,11 @@
 import useTranslation from 'next-translate/useTranslation';
-import { getAllPages } from '../../lib/notion/getAllPages';
+import { getAllPages } from '@/lib/notion/getAllPages';
 export const revalidate = 60;
 
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { PostCard } from './PostCard';
 import { Breadcrumb } from './Breadcrumbs';
-import { SearchButton } from './searchButton';
+import { SearchButton } from './SearchButton';
 import { SideBar } from './SideBar';
 
 export const PageList = async ({ dbName }: PageListProps) => {
