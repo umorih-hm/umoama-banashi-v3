@@ -7,7 +7,7 @@ import { getPageInfo } from '../../../lib/notion/getPage';
 import { getPageContent } from '../../../lib/notion/getPageContent';
 import { Breadcrumb } from '../../../components/elements/Breadcrumbs';
 import NextImage from 'next/image';
-import { Image, User } from '@nextui-org/react';
+import { User } from '@nextui-org/react';
 
 export default async function Page({ params }: { params: { id: string } }) {
   const htmlContent: any = await getPageContent(params.id);
@@ -49,6 +49,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             alt={post.title}
             className="rounded-lg object-contain"
             src={post.image ? post.image : 'https://placehold.jp/200x150.png'}
+            unoptimized
           />
         </div>
         {/* タイトル */}

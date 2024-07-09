@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import NextImage from 'next/image';
-import { Button } from '@nextui-org/react';
 import useTranslation from 'next-translate/useTranslation';
 
 interface ContentRequest {
@@ -10,7 +9,12 @@ interface ContentRequest {
   href: string;
 }
 
-export const Content = ({ imageSrc, title, navigation, href }: ContentRequest) => {
+export const Content = ({
+  imageSrc,
+  title,
+  navigation,
+  href,
+}: ContentRequest) => {
   const { t } = useTranslation('common');
 
   return (
@@ -24,15 +28,9 @@ export const Content = ({ imageSrc, title, navigation, href }: ContentRequest) =
               alt=""
               className="block mx-auto rounded-lg hover:opacity-80"
               src={imageSrc}
+              unoptimized
             />
           </Link>
-          {/* <Button
-            radius="full"
-            variant="bordered"
-            className="block mx-auto mt-4"
-          >
-            {t('component.button.see_it')}
-          </Button> */}
         </div>
         <div>
           <h1 className="font-bold pb-4">{title}</h1>

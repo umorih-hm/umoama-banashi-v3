@@ -1,5 +1,3 @@
-import Link from 'next/link';
-import NextImage from 'next/image';
 import { Button } from '@nextui-org/react';
 import { Content } from '../components/elements/Content';
 import useTranslation from 'next-translate/useTranslation';
