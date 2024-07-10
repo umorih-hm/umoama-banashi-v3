@@ -16,23 +16,27 @@
       "topic": "Topic",
       "umoama_contents": {
         "title": "UMOAMA CONTENTS",
-        "note" : {
-          "title" : "UMOAMA NOTE",
+        "note": {
+          "title": "UMOAMA NOTE",
           "navigation": "UMOAMAのふたりがそれぞれの学びや発見などを書いた記事が読めます。\n主なテーマは下記です。"
         },
-        "map" : {
-          "title" : "UMOAMA MAP",
+        "map": {
+          "title": "UMOAMA MAP",
           "navigation": "UMOAMAのふたりが見つけた・行った場所をまとめたマップが見られます。\n主な内容は下記です。"
         },
-        "works" : {
-          "title" : "UMOAMA WORKS",
+        "works": {
+          "title": "UMOAMA WORKS",
           "navigation": "UMOAMAのふたりが試しにつくってみた作品をご紹介します。\n主な制作ジャンルは下記です。"
         }
       },
-      "member":{
+      "member": {
         "title": "MEMBER",
-        "umorih": "UMORiH",
-        "amaneriy": "AMANERiY"
+        "umo": "UMO",
+        "rih": "RiH",
+        "umorih_ja": "うもりっひ",
+        "ama": "AMA",
+        "neriy": "NERiY",
+        "amaneriy_ja": "あまねり"
       }
     },
     "note": {

@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div className="container mx-auto min-h-screen">
-      <main className="flex bg-background flex-col items-center justify-center p-8 w-full md:w-5/6 lg:w-4/6 mx-auto">
+      <main className="flex flex-col gap-4 bg-background items-center justify-center p-8 w-full md:w-5/6 lg:w-4/6 mx-auto">
         {/* video */}
         <video src="/logo_mic.mp4" muted loop autoPlay width="200"></video>
 
@@ -55,12 +55,34 @@ export default function Home() {
         <h1 className="text-md md:text-xl font-bold mb-6">
           {t('app.top.member.title')}
         </h1>
-        <div className="flex gap-4 justify-center">
-          <Button color="success" variant="bordered">
-            {t('app.top.member.umorih')}
+        <div className="flex gap-2 md:gap-8 justify-center">
+          <Button
+            variant="bordered"
+            className="gap-0 font-bold block w-[150px] md:w-[300px] h-[100px] md:h-[220px]"
+          >
+            <span className="text-umorih m-0 text-2xl md:text-4xl">
+              {t('app.top.member.umo')}
+            </span>
+            <span className="text-2xl md:text-4xl">
+              {t('app.top.member.rih')}
+            </span>
+            <br></br>
+            <p className="text-center mt-1">{t('app.top.member.umorih_ja')}</p>
           </Button>
-          <Button color="danger" variant="bordered">
-            {t('app.top.member.amaneriy')}
+          <Button
+            variant="bordered"
+            className="gap-0 font-bold block w-[150px] md:w-[300px] h-[100px] md:h-[220px]"
+          >
+            <span className="text-amaneriy m-0 text-2xl md:text-4xl">
+              {t('app.top.member.ama')}
+            </span>
+            <span className="text-2xl md:text-4xl">
+              {t('app.top.member.neriy')}
+            </span>
+            <br />
+            <p className="text-center mt-1">
+              {t('app.top.member.amaneriy_ja')}
+            </p>
           </Button>
         </div>
       </main>
