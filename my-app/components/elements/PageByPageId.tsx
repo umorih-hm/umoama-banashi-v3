@@ -67,7 +67,7 @@ export const PageByPageId = async ({ dbName, id }: PageProps) => {
                     src: '/Amaneriy.png',
                   }
             }
-            description={`投稿日：${post.date}`}
+            description={`投稿日：${post.publishedDate}　最終更新日：${post.updatedDate}\n`}
           />
         </div>
         <div className="flex flex-col-reverse lg:flex-row justify-between gap-6 w-full pt-4">

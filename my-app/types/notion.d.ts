@@ -2,7 +2,8 @@ interface NotionPost {
   id: string;
   title: string;
   subTitle: string;
-  date: string;
+  publishedDate: string;
+  updatedDate: string;
   image: string;
   tags: string[];
   person: string;

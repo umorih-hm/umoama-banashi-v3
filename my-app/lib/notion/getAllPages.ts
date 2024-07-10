@@ -1,4 +1,5 @@
 import { notion } from './notion';
+import { formatDate } from '@/lib/date';
 
 export async function getAllPages(
   dbName: 'note' | 'works',
@@ -24,7 +25,7 @@ export async function getAllPages(
     database_id: dataBaseId,
     sorts: [
       {
-        property: 'Date',
+        property: 'PublishedDate',
         direction: 'descending',
       },
     ],
@@ -83,8 +84,13 @@ export async function getAllPages(
     const title = post.properties.Title.title[0]?.plain_text;
     // subTitle
     const subTitle = post.properties.SubTitle.rich_text[0]?.plain_text ?? '';
-    // date
-    const date = post.properties.Date.date.start;
+    // publishedDate
+    const publishedDate = post.properties.PublishedDate.date.start;
+    // updatedDate
+    const updatedDate = formatDate(
+      post.properties.UpdatedDate.last_edited_time,
+      'YYYY-MM-DD'
+    );
     // image
     const image = post.properties.Image.files[0]?.file.url;
     // tags
@@ -98,7 +104,16 @@ export async function getAllPages(
     const person = post.properties.Person.select.name;
 
     // プロパティをまとめたオブジェクトを返す
-    return { id, title, subTitle, date, image, tags, person };
+    return {
+      id,
+      title,
+      subTitle,
+      publishedDate,
+      updatedDate,
+      image,
+      tags,
+      person,
+    };
   });
 
   return {

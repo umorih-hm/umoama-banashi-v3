@@ -46,7 +46,7 @@ export const PostCard = ({ post, index, dbName }: PostCardProps) => {
                   src: '/Amaneriy.png',
                 }
           }
-          description={`投稿日：${post.date}`}
+          description={`投稿日：${post.publishedDate}`}
         />
       </Link>
     </Tooltip>
