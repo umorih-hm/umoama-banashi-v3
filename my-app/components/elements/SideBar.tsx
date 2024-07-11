@@ -4,13 +4,17 @@ import { getAllPages } from '@/lib/notion/getAllPages';
 import useTranslation from 'next-translate/useTranslation';
 import { Avatars } from './Avatars';
 
-export const SideBar = async ({ dbName, activeTag }: SideBarProps) => {
+export const SideBar = async ({
+  dbName,
+  activeTag,
+  activePerson,
+}: SideBarProps) => {
   const currentPosts = await getAllPages(dbName);
   const { t } = useTranslation('common');
 
   return (
     <ScrollArea className="w-full whitespace-nowrap rounded-md">
-      <Avatars dbName={dbName}></Avatars>
+      <Avatars dbName={dbName} activePerson={activePerson}></Avatars>
       <Divider className="my-3" />
       <div className="flex lg:flex-col gap-1">
         <Button

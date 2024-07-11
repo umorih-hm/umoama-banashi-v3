@@ -31,7 +31,7 @@ export const TagPageList = async ({ dbName, tag }: TagPageListProps) => {
       <main className="flex bg-background flex-col justify-center py-4 lg:p-6 w-full mx-auto">
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="w-full lg:w-1/12">
-            <SideBar dbName={dbName} activeTag={tag} />
+            <SideBar dbName={dbName} activeTag={tag} activePerson="" />
           </div>
           {/* ハッシュタグ */}
           <div className="w-full lg:w-11/12">

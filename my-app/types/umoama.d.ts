@@ -53,8 +53,10 @@ interface TagPageListProps {
 interface SideBarProps {
   dbName: dbNames;
   activeTag: string;
+  activePerson: string;
 }
 
 interface AvatarsProps {
   dbName: dbNames;
+  activePerson: string;
 }
