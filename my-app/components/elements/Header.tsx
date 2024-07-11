@@ -15,33 +15,39 @@ export const Header = () => {
     {
       title: t('app.layout.news'),
       to: '/',
+      isDisabled: true,
     },
     {
       title: t('app.layout.note'),
       to: '/note',
+      isDisabled: false,
     },
     {
       title: t('app.layout.map'),
       to: '/',
+      isDisabled: true,
     },
     {
       title: t('app.layout.works'),
       to: '/works',
+      isDisabled: false,
     },
     {
       title: t('app.layout.about'),
       to: '/',
+      isDisabled: true,
     },
     {
       title: t('app.layout.contact'),
       to: '/',
+      isDisabled: true,
     },
   ];
 
   return (
     <div>
       <Navbar isBordered className="bg-background py-6">
-        <div className='flex flex-col mx-auto'>
+        <div className="flex flex-col mx-auto">
           <NavbarContent className="mx-auto">
             <Link href="/">
               <Image width={200} alt="NextUI hero Image" src="/logo.svg" />
@@ -51,7 +57,13 @@ export const Header = () => {
             {header.map((item, index) => {
               return (
                 <NavbarItem key={index}>
-                  <Link href={item.to} className='text-sm sm:text-base'>{item.title}</Link>
+                  <Link
+                    href={item.to}
+                    isDisabled={item.isDisabled}
+                    className="text-sm sm:text-base"
+                  >
+                    {item.title}
+                  </Link>
                 </NavbarItem>
               );
             })}
