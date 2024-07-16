@@ -56,41 +56,31 @@ export const PageList = async ({ dbName }: PageListProps) => {
               <ScrollBar orientation="horizontal" />
             </ScrollArea>
 
-            {/* UMORiHの投稿 */}
-            <h1 className="font-bold">{t(`app.${dbName}.list.umorih`)}</h1>
-            <ScrollArea className="w-full whitespace-nowrap rounded-md">
-              <div className="flex w-max space-x-4 pt-2">
-                {umorihPosts.postsProperties.map(
-                  (post: NotionPost, index: number) => (
-                    <PostCard
-                      post={post}
-                      index={index}
-                      dbName={dbName}
-                      key={index}
-                    />
-                  )
-                )}
+            {/* タグごとの投稿 */}
+            {currentPosts.tags.map((tag: string, index: number) => (
+              <div key={index}>
+                <h1 className="font-bold">#{tag}</h1>
+                <ScrollArea className="w-full whitespace-nowrap rounded-md">
+                  <div className="flex w-max space-x-4 pt-2 ">
+                    {currentPosts.postsProperties.map(
+                      (post: NotionPost, index: number) => {
+                        if (post.tags.includes(tag)) {
+                          return (
+                            <PostCard
+                              post={post}
+                              index={index}
+                              dbName={dbName}
+                              key={index}
+                            />
+                          );
+                        }
+                      }
+                    )}
+                  </div>
+                  <ScrollBar orientation="horizontal" />
+                </ScrollArea>
               </div>
-              <ScrollBar orientation="horizontal" />
-            </ScrollArea>
-
-            {/* AMANERiYの投稿 */}
-            <h1 className="font-bold">{t(`app.${dbName}.list.amaneriy`)}</h1>
-            <ScrollArea className="w-full whitespace-nowrap rounded-md">
-              <div className="flex w-max space-x-4 pt-2">
-                {amaneriyPosts.postsProperties.map(
-                  (post: NotionPost, index: number) => (
-                    <PostCard
-                      post={post}
-                      index={index}
-                      dbName={dbName}
-                      key={index}
-                    />
-                  )
-                )}
-              </div>
-              <ScrollBar orientation="horizontal" />
-            </ScrollArea>
+            ))}
           </div>
         </div>
       </main>
