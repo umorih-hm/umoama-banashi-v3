@@ -10,8 +10,6 @@ import { SideBar } from './SideBar';
 
 export const PageList = async ({ dbName }: PageListProps) => {
   const currentPosts = await getAllPages(dbName);
-  const umorihPosts = await getAllPages(dbName, 'UMORiH');
-  const amaneriyPosts = await getAllPages(dbName, 'AMANERiY');
   const { t } = useTranslation('common');
   const links: Breadcrumb[] = [
     {
