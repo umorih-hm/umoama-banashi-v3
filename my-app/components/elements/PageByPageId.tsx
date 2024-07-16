@@ -6,7 +6,7 @@ import Script from 'next/script';
 import { getPageInfo } from '@/lib/notion/getPage';
 import { getPageContent } from '@/lib/notion/getPageContent';
 import { Breadcrumb } from '@/components/elements/Breadcrumbs';
-import NextImage from 'next/image';
+import { SelectableImages } from '@/components/elements/SelectableImages';
 import { User } from '@nextui-org/react';
 
 export const PageByPageId = async ({ dbName, id }: PageProps) => {
@@ -42,18 +42,10 @@ export const PageByPageId = async ({ dbName, id }: PageProps) => {
         <Breadcrumb links={links} />
       </div>
       <div className="container-xl flex bg-background min-h-screen flex-col items-center justify-center p-8 w-full md:w-5/6 mx-auto">
-        <div className="h-[300px] relative w-full mb-4">
-          {/* サムネ画像 */}
-          <NextImage
-            fill
-            alt={post.title}
-            className="rounded-lg object-contain"
-            src={post.image ? post.image : 'https://placehold.jp/200x150.png'}
-            unoptimized
-          />
-        </div>
+        {/* サムネ画像 */}
+        <SelectableImages post={post} />
         {/* タイトル */}
-        <h1 className="text-2xl mb-4">{post.title}</h1>
+        <h1 className="text-2xl my-4">{post.title}</h1>
         {/* パーソン ・日付*/}
         <div>
           <User

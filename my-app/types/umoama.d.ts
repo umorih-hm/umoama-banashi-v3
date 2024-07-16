@@ -1,3 +1,4 @@
+import { SelectableImages } from '@/components/elements/SelectableImages';
 type dbName = 'note' | 'works';
 
 interface Breadcrumb {
@@ -59,4 +60,8 @@ interface SideBarProps {
 interface AvatarsProps {
   dbName: dbNames;
   activePerson: string;
+}
+
+interface SelectableImagesProps {
+  post: NotionPost;
 }

@@ -4,6 +4,7 @@ import { formatDate } from '@/lib/date';
 export async function getPageInfo(pageId: string): Promise<NotionPost> {
   const response = await notion.pages.retrieve({ page_id: pageId });
   const post = response.properties;
+  console.log(post);
 
   // id
   const id = post.id;
@@ -20,6 +21,8 @@ export async function getPageInfo(pageId: string): Promise<NotionPost> {
   );
   // image
   const image = post.Image.files[0]?.file.url;
+  // images
+  const images = post.Image.files.map((item: any) => item.file.url);
   // tags
   const tags = post.Tags.multi_select.map((item: any) => item.name);
   // person
@@ -33,6 +36,7 @@ export async function getPageInfo(pageId: string): Promise<NotionPost> {
     publishedDate,
     updatedDate,
     image,
+    images,
     tags,
     person,
   };

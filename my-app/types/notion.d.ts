@@ -5,6 +5,7 @@ interface NotionPost {
   publishedDate: string;
   updatedDate: string;
   image: string;
+  images?: string[];
   tags: string[];
   person: string;
 }
