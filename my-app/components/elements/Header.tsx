@@ -34,8 +34,8 @@ export const Header = () => {
     },
     {
       title: t('app.layout.about'),
-      to: '/',
-      isDisabled: true,
+      to: '/about',
+      isDisabled: false,
     },
     {
       title: t('app.layout.contact'),
