@@ -1,5 +1,6 @@
 import { SelectableImages } from '@/components/elements/SelectableImages';
 type dbName = 'note' | 'works';
+type people = 'UMORiH' | 'AMANERiY';
 
 interface Breadcrumb {
   title: string;
@@ -64,4 +65,8 @@ interface AvatarsProps {
 
 interface SelectableImagesProps {
   post: NotionPost;
+}
+
+interface AboutCardProps {
+  person: people;
 }

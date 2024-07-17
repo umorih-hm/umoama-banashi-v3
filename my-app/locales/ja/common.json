@@ -40,6 +40,7 @@
       }
     },
     "note": {
+      "title": "note",
       "list": {
         "current": "最新の投稿",
         "umorih": "UMORiH",
@@ -47,11 +48,22 @@
       }
     },
     "works": {
+      "title": "WORKS",
       "list": {
         "current": "最新の投稿",
         "umorih": "UMORiH",
         "amaneriy": "AMANERiY"
       }
+    },
+    "about": {
+      "title": "About UMOAMA",
+      "umo": "UMO",
+      "rih": "RiH",
+      "umorih_ja": "うもりっひ",
+      "ama": "AMA",
+      "neriy": "NERiY",
+      "amaneriy_ja": "あまねり",
+      "view_all": "すべて見る"
     },
     "search": {
       "result": "の検索結果"
