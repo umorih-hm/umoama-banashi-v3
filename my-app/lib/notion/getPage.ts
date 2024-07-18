@@ -4,7 +4,6 @@ import { formatDate } from '@/lib/date';
 export async function getPageInfo(pageId: string): Promise<NotionPost> {
   const response = await notion.pages.retrieve({ page_id: pageId });
   const post = response.properties;
-  console.log(post);
 
   // id
   const id = post.id;

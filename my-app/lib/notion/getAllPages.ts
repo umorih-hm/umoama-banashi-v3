@@ -116,8 +116,18 @@ export async function getAllPages(
     };
   });
 
+  const uniqueTags = allTags.reduce(
+    (accumulator: string[], currentValue: string) => {
+      if (!accumulator.includes(currentValue)) {
+        accumulator.push(currentValue);
+      }
+      return accumulator;
+    },
+    []
+  );
+
   return {
     postsProperties: postsProperties,
-    tags: allTags,
+    tags: uniqueTags,
   };
 }
