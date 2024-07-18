@@ -9,8 +9,8 @@ import { FaArrowRight } from 'react-icons/fa';
 
 export default async function Page() {
   const { t } = useTranslation('common');
-  const currentPostsNoteUmorih = await getAllPages('note', 'UMORiH');
-  const currentWorksNoteUmorih = await getAllPages('works', 'UMORiH');
+  const currentPostsNote = await getAllPages('note');
+  const currentWorksNote = await getAllPages('works');
 
   return (
     <div className="container mx-auto min-h-screen">
@@ -32,7 +32,7 @@ export default async function Page() {
         <h1 className="font-bold">{t(`app.works.list.current`)}</h1>
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
-            {currentWorksNoteUmorih.postsProperties.map(
+            {currentWorksNote.postsProperties.map(
               (post: NotionPost, index: number) => (
                 <PostCard
                   post={post}
@@ -57,7 +57,7 @@ export default async function Page() {
         <h1 className="font-bold">{t(`app.note.list.current`)}</h1>
         <ScrollArea className="w-full whitespace-nowrap rounded-md">
           <div className="flex w-max space-x-4 pt-2">
-            {currentPostsNoteUmorih.postsProperties.map(
+            {currentPostsNote.postsProperties.map(
               (post: NotionPost, index: number) => (
                 <PostCard post={post} index={index} dbName="note" key={index} />
               )
