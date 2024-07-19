@@ -2,9 +2,9 @@ import useTranslation from 'next-translate/useTranslation';
 import { getAllPages } from '@/lib/notion/getAllPages';
 export const revalidate = 60;
 import { Button, Link } from '@nextui-org/react';
-import { AboutCard } from '@/components/elements/AboutCard';
+import { AboutCard } from '@/components/elements/Aboutcard/AboutCard';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
-import { PostCard } from '@/components/elements/PostCard';
+import { PostCard } from '@/components/elements/PostCard/PostCard';
 import { FaArrowRight } from 'react-icons/fa';
 
 export default async function Page() {

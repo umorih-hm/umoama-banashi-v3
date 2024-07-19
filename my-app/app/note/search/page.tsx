@@ -1,4 +1,4 @@
-import { SearchPageList } from '@/components/elements/SearchPageList';
+import { SearchPageList } from '@/components/elements/SearchPageList/SearchPageList';
 
 export default async function Search({
   searchParams,

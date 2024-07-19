@@ -1,12 +1,12 @@
 import useTranslation from 'next-translate/useTranslation';
 import 'zenn-content-css';
-import { Toc } from '@/components/elements/Toc';
+import { Toc } from '@/components/elements/Toc/Toc';
 import Script from 'next/script';
 
 import { getPageInfo } from '@/lib/notion/getPage';
 import { getPageContent } from '@/lib/notion/getPageContent';
-import { Breadcrumb } from '@/components/elements/Breadcrumbs';
-import { SelectableImages } from '@/components/elements/SelectableImages';
+import { Breadcrumb } from '@/components/elements/Breadcrumbs/Breadcrumbs';
+import { SelectableImages } from '@/components/elements/SelectableImages/SelectableImages';
 import { User } from '@nextui-org/react';
 
 export const PageByPageId = async ({ dbName, id }: PageProps) => {

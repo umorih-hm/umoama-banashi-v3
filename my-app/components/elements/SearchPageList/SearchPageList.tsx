@@ -3,13 +3,16 @@ import { getAllPages } from '@/lib/notion/getAllPages';
 export const revalidate = 60;
 
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
-import { PostCard } from './PostCard';
-import { Breadcrumb } from './Breadcrumbs';
-import { SearchButton } from './SearchButton';
-import { SideBar } from './SideBar';
+import { PostCard } from '@/components/elements/PostCard/PostCard';
+import { Breadcrumb } from '@/components/elements/Breadcrumbs/Breadcrumbs';
+import { SearchButton } from '@/components/elements/SearchButton/SearchButton';
+import { SideBar } from '@/components/elements/SideBar/SideBar';
 
-export const TagPageList = async ({ dbName, tag }: TagPageListProps) => {
-  const searchedPosts = await getAllPages(dbName, '', '', tag);
+export const SearchPageList = async ({
+  dbName,
+  keyword,
+}: SearchPageListProps) => {
+  const searchedPosts = await getAllPages(dbName, '', keyword);
   const { t } = useTranslation('common');
   const links: Breadcrumb[] = [
     {
@@ -21,8 +24,8 @@ export const TagPageList = async ({ dbName, tag }: TagPageListProps) => {
       href: `/${dbName}`,
     },
     {
-      title: `# ${tag}`,
-      href: `/${dbName}/tags?tag=${tag}`,
+      title: `${keyword}${t('app.search.result')}`,
+      href: `/${dbName}/search?keyword=${keyword}`,
     },
   ];
 
@@ -31,7 +34,7 @@ export const TagPageList = async ({ dbName, tag }: TagPageListProps) => {
       <main className="flex bg-background flex-col justify-center py-4 lg:p-6 w-full mx-auto">
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="w-full lg:w-1/12">
-            <SideBar dbName={dbName} activeTag={tag} activePerson="" />
+            <SideBar dbName={dbName} activeTag="" activePerson="" />
           </div>
           {/* ハッシュタグ */}
           <div className="w-full lg:w-11/12">
@@ -41,7 +44,10 @@ export const TagPageList = async ({ dbName, tag }: TagPageListProps) => {
               </div>
               <SearchButton dbName={dbName} />
             </div>
-            <h1 className="font-bold"># {tag}</h1>
+            {/* 検索キーワード */}
+            <h1 className="font-bold">
+              {keyword} {t('app.search.result')}
+            </h1>
             <ScrollArea className="w-full whitespace-nowrap rounded-md">
               <div className="flex w-max space-x-4 pt-2">
                 {searchedPosts.postsProperties.map(

@@ -1,4 +1,4 @@
-import { TagPageList } from '@/components/elements/TagPageList';
+import { TagPageList } from '@/components/elements/TagPageList/TagPageList';
 
 export default async function Tag({
   searchParams,

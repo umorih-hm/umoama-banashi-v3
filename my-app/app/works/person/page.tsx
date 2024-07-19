@@ -1,4 +1,4 @@
-import { PersonPageList } from '@/components/elements/PersonPageList';
+import { PersonPageList } from '@/components/elements/PersonPageList/PersonPageList';
 
 export default async function Page({
   searchParams,

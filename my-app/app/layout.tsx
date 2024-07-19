@@ -3,8 +3,8 @@ import { Providers } from './uiProvider';
 import { Zen_Kaku_Gothic_New } from 'next/font/google';
 import './globals.css';
 
-import { Header } from '@/components/elements/Header';
-import { Footer } from '@/components/elements/Footer';
+import { Header } from '@/components/elements/Header/Header';
+import { Footer } from '@/components/elements/Footer/Footer';
 
 const ZenKakuGothicNew = Zen_Kaku_Gothic_New({
   display: 'swap',

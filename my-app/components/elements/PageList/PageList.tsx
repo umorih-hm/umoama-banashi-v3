@@ -3,16 +3,13 @@ import { getAllPages } from '@/lib/notion/getAllPages';
 export const revalidate = 60;
 
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
-import { PostCard } from './PostCard';
-import { Breadcrumb } from './Breadcrumbs';
-import { SearchButton } from './SearchButton';
-import { SideBar } from './SideBar';
+import { PostCard } from '../PostCard/PostCard';
+import { Breadcrumb } from '../Breadcrumbs/Breadcrumbs';
+import { SearchButton } from '../SearchButton/SearchButton';
+import { SideBar } from '../SideBar/SideBar';
 
-export const PersonPageList = async ({
-  dbName,
-  person,
-}: PersonPageListProps) => {
-  const posts = await getAllPages(dbName, person);
+export const PageList = async ({ dbName }: PageListProps) => {
+  const currentPosts = await getAllPages(dbName);
   const { t } = useTranslation('common');
   const links: Breadcrumb[] = [
     {
@@ -23,10 +20,6 @@ export const PersonPageList = async ({
       title: t(`app.layout.${dbName}`),
       href: `/${dbName}`,
     },
-    {
-      title: person,
-      href: `/${dbName}/person`,
-    },
   ];
 
   return (
@@ -34,7 +27,7 @@ export const PersonPageList = async ({
       <main className="flex bg-background flex-col justify-center py-4 lg:p-6 w-full mx-auto">
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="w-full lg:w-1/12">
-            <SideBar dbName={dbName} activeTag="ALL" activePerson={person} />
+            <SideBar dbName={dbName} activeTag="ALL" activePerson="" />
           </div>
           <div className="w-full lg:w-11/12">
             <div className="flex justify-between pb-4">
@@ -43,11 +36,11 @@ export const PersonPageList = async ({
               </div>
               <SearchButton dbName={dbName} />
             </div>
-            {/* 投稿一覧 */}
+            {/* 最新の投稿 */}
             <h1 className="font-bold">{t(`app.${dbName}.list.current`)}</h1>
             <ScrollArea className="w-full whitespace-nowrap rounded-md">
               <div className="flex w-max space-x-4 pt-2">
-                {posts.postsProperties.map(
+                {currentPosts.postsProperties.map(
                   (post: NotionPost, index: number) => (
                     <PostCard
                       post={post}
@@ -60,6 +53,32 @@ export const PersonPageList = async ({
               </div>
               <ScrollBar orientation="horizontal" />
             </ScrollArea>
+
+            {/* タグごとの投稿 */}
+            {currentPosts.tags.map((tag: string, index: number) => (
+              <div key={index}>
+                <h1 className="font-bold">#{tag}</h1>
+                <ScrollArea className="w-full whitespace-nowrap rounded-md">
+                  <div className="flex w-max space-x-4 pt-2 ">
+                    {currentPosts.postsProperties.map(
+                      (post: NotionPost, index: number) => {
+                        if (post.tags.includes(tag)) {
+                          return (
+                            <PostCard
+                              post={post}
+                              index={index}
+                              dbName={dbName}
+                              key={index}
+                            />
+                          );
+                        }
+                      }
+                    )}
+                  </div>
+                  <ScrollBar orientation="horizontal" />
+                </ScrollArea>
+              </div>
+            ))}
           </div>
         </div>
       </main>

@@ -1,4 +1,4 @@
-import { SelectableImages } from '@/components/elements/SelectableImages';
+import { SelectableImages } from '@/components/elements/SelectableImages/SelectableImages';
 type dbName = 'note' | 'works';
 type people = 'UMORiH' | 'AMANERiY';
 
