@@ -1,4 +1,4 @@
-import { Button } from '@nextui-org/react';
+import { Link, Button } from '@nextui-org/react';
 import { Content } from '@/components/elements/Content/Content';
 import useTranslation from 'next-translate/useTranslation';
 
@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div className="container mx-auto min-h-screen">
-      <main className="flex flex-col gap-4 bg-background items-center justify-center p-8 w-full md:w-5/6 lg:w-4/6 mx-auto">
+      <main className="flex flex-col gap-4 bg-background items-center justify-center p-8 w-full md:w-5/6 mx-auto">
         {/* video */}
         <video src="/logo_mic.mp4" muted loop autoPlay width="200"></video>
 
@@ -32,14 +32,14 @@ export default function Home() {
         </div>
 
         {/* UMOAMA MAP */}
-        <div className="py-4 w-full">
+        {/* <div className="py-4 w-full">
           <Content
             imageSrc="/map.png"
             title={t('app.top.umoama_contents.map.title')}
             navigation={t('app.top.umoama_contents.map.navigation')}
             href="/"
           />
-        </div>
+        </div> */}
 
         {/* UMOAMA WORKS */}
         <div className="py-4 w-full">
@@ -57,32 +57,44 @@ export default function Home() {
         </h1>
         <div className="flex gap-2 md:gap-8 justify-center">
           <Button
+            href="/about"
+            as={Link}
             variant="bordered"
-            className="gap-0 font-bold block w-[150px] md:w-[300px] h-[100px] md:h-[220px]"
+            className="gap-0 font-bold w-[150px] md:w-[300px] h-[100px] md:h-[220px]"
           >
-            <span className="text-umorih m-0 text-2xl md:text-4xl">
-              {t('app.top.member.umo')}
-            </span>
-            <span className="text-2xl md:text-4xl">
-              {t('app.top.member.rih')}
-            </span>
-            <br></br>
-            <p className="text-center mt-1">{t('app.top.member.umorih_ja')}</p>
+            <div className="flex flex-col">
+              <div>
+                <span className="text-umorih m-0 text-2xl md:text-4xl">
+                  {t('app.top.member.umo')}
+                </span>
+                <span className="text-2xl md:text-4xl">
+                  {t('app.top.member.rih')}
+                </span>
+              </div>
+              <p className="text-center mt-1">
+                {t('app.top.member.umorih_ja')}
+              </p>
+            </div>
           </Button>
           <Button
+            href="/about"
+            as={Link}
             variant="bordered"
-            className="gap-0 font-bold block w-[150px] md:w-[300px] h-[100px] md:h-[220px]"
+            className="gap-0 font-bold w-[150px] md:w-[300px] h-[100px] md:h-[220px]"
           >
-            <span className="text-amaneriy m-0 text-2xl md:text-4xl">
-              {t('app.top.member.ama')}
-            </span>
-            <span className="text-2xl md:text-4xl">
-              {t('app.top.member.neriy')}
-            </span>
-            <br />
-            <p className="text-center mt-1">
-              {t('app.top.member.amaneriy_ja')}
-            </p>
+            <div className="flex flex-col">
+              <div>
+                <span className="text-amaneriy m-0 text-2xl md:text-4xl">
+                  {t('app.top.member.ama')}
+                </span>
+                <span className="text-2xl md:text-4xl">
+                  {t('app.top.member.neriy')}
+                </span>
+              </div>
+              <p className="text-center mt-1">
+                {t('app.top.member.amaneriy_ja')}
+              </p>
+            </div>
           </Button>
         </div>
       </main>

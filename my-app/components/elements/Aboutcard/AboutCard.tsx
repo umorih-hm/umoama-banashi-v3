@@ -8,7 +8,10 @@ import { Avatar, Button, Link } from '@nextui-org/react';
 export const AboutCard = ({ person }: AboutCardProps) => {
   const { t } = useTranslation('common');
   return (
-    <div className="border-2 rounded-xl border-black w-full py-12">
+    <div
+      id="amaneriy"
+      className="border-2 rounded-xl border-black w-full py-12"
+    >
       <div className="flex flex-col md:flex-row w-full">
         <div className="w-full md:w-3/6">
           <Avatar
